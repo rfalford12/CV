@@ -1,6 +1,6 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
-\usepackage{fullpage}
+\usepackage[margin=0.4in]{geometry}
 \usepackage{amsmath,amsfonts}
 \usepackage{textgreek}
 
@@ -16,13 +16,14 @@
 \renewcommand{\textsc}[1]{\smallcapsspacing{\scshape{#1}}}
 
 \usepackage{CV}
+%\usepackage[letterspace=100]{microtype}
 
 \newcommand{\tworowstwocolsitem}[4]{
 \noindent
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
 		#1 & #2 \\
 		#3 & #4 \\
-\end{tabular*}\vspace{0.75\baselineskip}}
+\end{tabular*}\vspace{0.5\baselineskip}}
 
 \newcommand{\educationitem}[4]{
 \tworowstwocolsitem{#1}{#2}{\textit{#3}}{\textit{#4}}}
@@ -34,14 +35,14 @@
 \noindent
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
 		#1 & #2 \\
-\end{tabular*}\newline#3\vspace{0.75\baselineskip}\par}
+\end{tabular*}\newline#3\vspace{0.5\baselineskip}\par}
 
 \newcommand{\outreachitem}[4]{
 \noindent
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
 		#1 & #2 \\
 		#3 & \\
-\end{tabular*}\newline#4\vspace{0.75\baselineskip}\par}
+\end{tabular*}\newline#4\vspace{0.5\baselineskip}\par}
 
 \newcommand{\researchitem}[4]{
 \outreachitem{#1}{#2}{\textit{#3}}{Topic: #4}}
@@ -50,33 +51,31 @@
 \noindent
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
 		#1 & #2 \\
-\end{tabular*}\vspace{0.75\baselineskip}}
+\end{tabular*}\vspace{0.3\baselineskip}}
 
 \usepackage{titlesec}
-\titleformat{\section}{}{}{}{\hrule\vspace{0.5\baselineskip}\sffamily\Large\uppercase}{}{}
-\titlespacing{\section}{0pt}{-15pt}{*1}
+\titleformat{\section}{}{}{}{\hrule\vspace{0.5\baselineskip}\sffamily\large\uppercase}{}{}
+\titlespacing{\section}{0pt}{-18pt}{*1}
 
 % enables reverse numbering
-\usepackage[leftmargin=12pt, itemsep=0.5\baselineskip]{etaremune}
+\usepackage[leftmargin=11pt, itemsep=0.15\baselineskip]{etaremune}
 
+\pagestyle{empty}
 \begin{document}
 
-%\Header
 \begin{center}
-\Large{\sffamily\allcapsspacing{\uppercase{Rebecca Faye Alford}}}
+\large{\sffamily\allcapsspacing{\uppercase{Rebecca Faye Alford}}}
 
-\normalsize{\textsc{Carnegie Mellon University, SMC 2858 \\
-5000 Forbes Ave, Pittsburgh, PA 15289 \\
-\vspace{0.25\baselineskip}
+\normalsize{\textsc{Carnegie Mellon University, SMC 2858,
+5000 Forbes Ave, Pittsburgh, PA 15289  \\
+%\vspace{0.25\baselineskip}
 ralford@andrew.cmu.edu}}
 \end{center}
 
-%\Education
 \section*{\allcapsspacing{Education}}
 \educationitem{Carnegie Mellon University}{Pittsburgh, PA}{B.S. Chemistry, Concentration: Computational Chemistry}{May 2016}
 \educationitem{The Johns Hopkins University}{Baltimore, MD}{Visiting Undergraduate - Chemical \& Biomolecular Engineering}{May 2013--Present}
 
-%\Research Experience
 \section*{\allcapsspacing{Research Experience}}
 \researchitem{NIH Undergraduate Research Fellow, The Johns Hopkins University}{2013--Present}{Advisor: Dr. Jeffrey J. Gray}{Computational modeling of membrane proteins}
 \researchitem{Software Engineering Intern, Spatial4j}{Spring 2014}{Advisor: David Smiley}{Modeling of geodesic shapes in object-oriented Spatial4j}
@@ -90,16 +89,16 @@ ralford@andrew.cmu.edu}}
 \item Pope WH, Bowman CA, Russell DA, Jacobs-Sera D, Asai DJ, Cresawn SG, Jacobs WR, Hendrix RW, Lawrence JG, Hartfull GF, \textbf{SEA-PHAGES}, PHIRE (2015) ``Whole genome comparison of a large collection of mycobacteriophages reveals a continuum of phage genetic diversity variation'' \textit{eLife}, 4, 1-65. \textit{*Full author listing in manuscript. Contribution -- Isolated and characterized a novel phage computationally and experimentally}
 \end{etaremune}
 
-% some items use leadership item instead of year item to make the year appear in line with the top line for multiline entries
-\section*{\allcapsspacing{Selected Honors and Awards}}
-\yearitem{NIH Undergraduate Research Fellowship}{2013--Present}
-\yearitem{Dean's List High Honors}{Fall 2014, Spring 2014, Spring 2015}
-\yearitem{Mellon College of Science -- Ruth Welch Walker Scholarship}{2013--Present}
-\yearitem{Grace Hopper Celebration of Women in Computing - Scholar}{2014}
-\yearitem{Selected Student Speaker - TEDxCMU}{2013}
-\yearitem{Best in Biochemistry - Intel International Science and Engineering Fair}{2012}
-\yearitem{National Semifinalist - Intel Science Talent Search}{2012}
-\yearitem{NASA Max Carpenter Award for Promise in Science and Engineering}{2010}
+
+\section*{\allcapsspacing{Teaching Experience}}
+\yearitem{Co-Instructor, Rosetta REU Boot Camp: \textit{An intense crash course to developing in Rosetta}}{UNC, Spring 2015}
+\yearitem{Co-Instructor, Rosetta Boot Camp: \textit{An intense crash course to developing in Rosetta}}{UNC, Spring 2014}
+\yearitem{Co-Developer and Co-Instructor, ThinkTech: \textit{A computational thinking course for middle school girls}}{CMU, Fall 2014--Present}
+
+\section*{\allcapsspacing{Scientific Leadership}}
+\leadershipitem{Assistant Organizer, Rosetta REU Program}{2015}{First virtual REU community. Assisted with admissions and adjusted boot camp materials for the undergraduate level}
+\leadershipitem{High school research mentor}{2011--Present}{Mentor to six high school student researchers interested in computational structural biology and bioinformatics}
+\leadershipitem{Organizer, Rosetta @ Grace Hopper}{Fall 2014}{Attended Grace Hopper for first time as Rosetta Organization. Created career fair materials, poster, and served as contact point for conference logisitcs}
 
 \section*{\allcapsspacing{Scientific Talks}}
 \begin{etaremune}
@@ -120,21 +119,10 @@ ralford@andrew.cmu.edu}}
 \item Alford RF, Simmons-Elder R, Poultney C, Halvorsen L, Bonneau R (2012) ``A machine-learning based approach to predicting functional effects of mutations in membrane proteins'' \textit{Rosetta Conference}, Leavenworth, WA.
 \end{etaremune}
 
-\section*{\allcapsspacing{Teaching Experience}} %\ who are the students?!
-\teachingitem{Co-Instructor, Rosetta REU Boot Camp}{Spring 2015}{A course on developing in Rosetta for undergraduate students} {Chapel Hill, NC}
-\teachingitem{Co-Instructor, Rosetta Boot Camp}{Spring 2014}{A course on developing in Rosetta for graduate students and postdocs}{Chapel Hill, NC}
-\teachingitem{Co-Developer and Co-Instructor, ThinkTech}{Fall 2014--Present}{A computational thinking course for middle school girls}{Pittsburgh, PA}
-
-\section*{\allcapsspacing{Scientific Leadership}}
-\leadershipitem{Assistant Organizer, Rosetta REU Program}{2015}{First REU supported by a virtual community. Assisted with admissions and adjusted boot camp materials for the undergraduate level}
-\leadershipitem{High school research mentor}{2011--Present}{Mentor to six high school student researchers interested in computational structural biology and bioinformatics}
-\leadershipitem{Organizer, Rosetta @ Grace Hopper}{Fall 2014}{Attended Grace Hopper for first time as Rosetta Organization. Created career fair materials, poster, and served as contact point for conference logisitcs}
-
 \section*{\allcapsspacing{Activities and Outreach}}
 \leadershipitem{Instructor and Volunteer, CMU Creative Technology Nights}{2013--Present}{Weekly 2hr workshops for middle school girls designed to increase STEM exposure}
 \leadershipitem{Science Fair Judge, Plainview Old Bethpage Middle School}{2014, 2015}{Evaluated projects for annual 6th grade science fair}
 \yearitem{Committee Member, Carnegie Mellon Women in Computer Science}{2014--Present}
 \yearitem{Writer and Science Policy Director, The Triple Helix Undergraduate Journal}{2013--2015}
 \leadershipitem{Team Captain, VisionWalk}{2012, 2013}{Organized teams in Long Island, NY and Pittsburgh, PA for annual walk to raise awareness for retinal disease}
-
 \end{document}
