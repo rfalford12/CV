@@ -2,223 +2,227 @@
 %%%%%%%%%%%%%%%%%%% Rebecca Alford's CV %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
-%%% Preamble
 \usepackage{fullpage}
 \usepackage[margin=0.75in]{geometry}
+\addtolength{\footskip}{-20pt}
+\usepackage{amsmath,amsfonts}
+\usepackage{textgreek}
+
 \usepackage{multicol}
 \setlength\columnsep{20pt}
 \setlength\multicolsep{0pt}
-\usepackage{paralist}
 
-\usepackage{textgreek}
-\usepackage{hyperref}
-
-%% Font Features
 \usepackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text]{Palatino}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Avenir Next}
+\setromanfont[Mapping=tex-text]{Palatino}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Avenir Next}
 
-%% Fixes for letterspacing that work with XeLaTeX
+% Remove paragraph indentation
+\usepackage[parfill]{parskip}
+\usepackage{paralist, tabularx}
+
+% Fixes for letterspacing that work with XeLaTeX
 \newcommand{\allcapsspacing}[1]{{\addfontfeature{LetterSpace=7.5}#1}}
 \newcommand{\smallcapsspacing}[1]{{\addfontfeature{LetterSpace=5.0}#1}}
 \renewcommand{\textsc}[1]{\smallcapsspacing{\scshape{#1}}}
 
 \usepackage{CV}
 
-%% Layouts
 \newcommand{\tworowstwocolsitem}[4]{
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
-		#1 & #2 \\
-		#3 & #4 \\
-\end{tabular*}\vspace{0.75\baselineskip}}
-
-\newcommand{\threerowstwocolsitem}[5]{
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
-		#1 & #2 \\
-		#3 & #4 \\
-		#5 & \\
-\end{tabular*}\vspace{0.75\baselineskip}}
+{#1} \hfill {#2} \\
+{#3} \hfill {#4} \\
+\vspace{-0.5\baselineskip}\par}
 
 \newcommand{\educationitem}[4]{
+\tworowstwocolsitem{#1}{#2}{\textit{#3}}{\textit{#4}}}
+
+\newcommand{\teachingitem}[4]{
 \tworowstwocolsitem{#1}{#2}{\textit{#3}}{#4}}
 
-\newcommand{\longteachingitem}[5]{
-\threerowstwocolsitem{#1}{#2}{\textit{#3}}{#5}{\textit{#4}}}
-
 \newcommand{\leadershipitem}[3]{
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
-		#1 & #2 \\
-\end{tabular*}\newline\textit{#3}\vspace{0.75\baselineskip}\par}
+\textsc{#1} \hfill {#2} \\
+#3 \\
+\vspace{-0.5\baselineskip}\par}
 
 \newcommand{\outreachitem}[4]{
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
-		#1 & #2 \\
-		#3 & \\
-\end{tabular*}\newline#4\vspace{0.75\baselineskip}\par}
+{#1} \hfill {#2} \\
+#3 \smallskip
+#4 
+\par\vspace{0.5\baselineskip}}
 
 \newcommand{\researchitem}[4]{
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
-		#1 & #2 \\
-		#3 & \\
-\end{tabular*}\newline#4\vspace{0.25\baselineskip}\par}
-
-\newcommand{\skillsitem}[1]{
-\noindent 
-#1\vspace{0.25\baselineskip}\par}
-
-%\newcommand{\researchitem}[4]{
-%\outreachitem{#1}{#2}{\textit{#3}}{Topic: #4}}
+\outreachitem{#1}{#2}{\textit{#3}}{\vspace{0\baselineskip}#4}}
 
 \newcommand{\yearitem}[2]{
-\noindent
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
-		#1 & #2 \\
-\end{tabular*}\vspace{0.75\baselineskip}\par}
+{#1} \hfill {#2} \\
+\vspace{-0.5\baselineskip}\par}
 
 \usepackage{titlesec}
-\titleformat{\section}{}{}{}{\hrule\vspace{0.5\baselineskip}\sffamily\Large\uppercase}{}{}
+\titleformat{\section}{}{}{}{\hrule\vspace{0.5\baselineskip}\sffamily\large\uppercase}{}{}
 \titlespacing{\section}{0pt}{-15pt}{*1}
+
+\titleformat{\subsection}{}{}{}{\sffamily\normalsize\uppercase}{}{}
 
 % enables reverse numbering
 \usepackage[leftmargin=12pt, itemsep=0.5\baselineskip]{etaremune}
 
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clears the header and footer
+\renewcommand{\headrulewidth}{0pt} % removes the horizontal line that comes with fancyhdr
+\rfoot{\color{gray}\thepage}
+\lfoot{\color{gray}Alford}
+
 \begin{document}
 
-%%% Main Heading: Name, Address, Email, Etc
 \begin{center}
-\Large{\sffamily{Rebecca F. Alford}}\\
+\Large{\sffamily\allcapsspacing{\uppercase{Rebecca F. Alford}}}
+
 \normalsize{\textsc{Carnegie Mellon University, SMC 2858 \\
-5000 Forbes Ave, Pittsburgh, PA 15289 \\
-\href{ralford@andrew.cmu.edu}{ralford@andrew.cmu.edu}}}
+5000 Forbes Ave, Pittsburgh, PA, 15289 \\
+ralford@andrew.cmu.edu -- (631) 804-2231 }
+\vspace{0.25\baselineskip}\par}
 \end{center}
 
 %%% Section: Education
 \section*{\allcapsspacing{Education}}
-
-\educationitem{Carnegie Mellon University}{Pittsburgh, PA}{B.S. Chemistry, Concentration: Computational Chemistry}{Expected May 2016}
- 
-\educationitem{The Johns Hopkins University}{Baltimore, MD}{Visiting Student}{Summer 2010}
+\educationitem{\textsc{Carnegie Mellon University}}{Pittsburgh, PA}{B.S. Chemistry, Concentration: Computational Chemistry}{Expected May 2016}
+\vspace{-0.25\baselineskip}\par
+%Honors Thesis Title: Computational membrane protein modeling \par
 
 %%% Section: Research Experience
 \section*{\allcapsspacing{Research Experience}}
-
-\researchitem{Undergraduate Research Assistant, The Johns Hopkins University}{2013--Present}{Advisor: Dr. Jeffrey J. Gray}{Topic: \textit{Computational modeling of membrane proteins}}
+\researchitem{\textsc{Undergraduate Research Assistant}, The Johns Hopkins University}{2013--Present}{Advisor: Dr. Jeffrey J. Gray}{
 \begin{compactitem}
-\item Developed framework for membrane protein modeling in Rosetta
-\item Created proof-of-concept applications for refinement, ∆∆G prediction, \\protein-protein docking, and symmetric docking in the membrane
-\item Development of a new implicit membrane model and energy function \\ able to capture different lipid compositions
-\item Active involvement in development of the Rosetta molecular modeling suite \\
+\item Redesgined and implemented a framework for membrane protein modeling in Rosetta
+\item Developed new proof-of-concept structure prediction applications for high-resolution refinement, ∆∆\textit{G} prediction, protein-protein docking, amd assembly of symmetric complexes in the bilayer. 
+\item Development of an implicit membrane potential for protein structure prediction and design in membranes of different lipid composition
+\item Actively involved in development of the Rosetta molecular modeling suite
 \end{compactitem}
+}
 
-\researchitem{Facebook Open Academy Intern, Spatial4j}{2014}{Advisor: David Smiley}{Topic: \textit{Modeling of geodesic shapes in object-oriented Spatial4j}}
+\researchitem{\textsc{High School and Undergraduate Research Assistant}, New York University}{2011--2013}{Advisor: Dr. Richard Bonneau}{
 \begin{compactitem}
-\item Implemented module for representing a polygon on the surface of an ellipsoid
-\item Implemented algorithms calculating the spatial relationship between the \\ polygon and surrounding shapes \\
+\item Applied machine learning and structure prediction to classify mutations as disruptive or non-disruptive to protein function
+\item Developed a new method to predict the effects of mutations on memrbane protein function
+\item Contributed to new method to predict effects of mutations on soluble protein funciton
 \end{compactitem}
+}
 
-\researchitem{High School Research Assistant, New York University}{2011--2013}{Advisor: Dr. Richard Bonneau}{Topic: \textit{Prediction of deleterious protein variants using structure prediction}}
+\researchitem{\textsc{High School Research Assistant}, Stony Brook University}{2009--2010}{Advisor: Dr. Maurice Kernan}{
 \begin{compactitem}
-\item Developed a structure-based method for predicting mutation effects on \\ membrane protein function
-\item Applied machine learning to improve prediction accuracy
-\item Participated in expanding this method to predicting deleterious variants \\ in soluble proteins \\
-\end{compactitem}
-
-\researchitem{High School Research Assistant, Stony Brook University}{2009--2010}{Advisor: Dr. Maurice Kernan}{Topic: \textit{Characterization of TRPM ion channel function in Drosophila}}
-\begin{compactitem}
-\item Designed several mutations in the \textit{Drosophila} TRPM gene 
-\item Studied the functional effects of mutations at various developmental stages \\
-\end{compactitem}
+\item Designed several mutations in the \textit{Drosophila} TRPM gene implicated in human vision
+\item Studied the behavioral effects of mutations at various developmental stages
+\end{compactitem}	
+}
 
 %%% Section: Publications
 \section*{\allcapsspacing{Publications}}
 
 \begin{etaremune}
-\item Baugh EH, Simmons-Elder R, Muller C, \textbf{Alford RF}, Volovsky N, Lash A, Bonneau R (2015) ``Structural modeling improves classification and interpretation of deleterious protein variation,'' \textit{Under Review - Nucleic Acids Research}
+\item Baugh EH, Simmons-Elder R, Muller CL, \textbf{Alford RF}, Volovsky N, Lash A, Bonneau R (2015) ``Robust classification of protein variation using structural modeling and large-scale data integration,'' \textit{Nucleic Acids Research - Under Review}.
 
-\item \textbf{Alford RF*}, Koehler Leman J*, Weitzner BD, Duran AM, Tilley DC, Elazar A, Gray JJ (2015) ``An integrated framework advancing membrane protein modeling and design,'' \textit{PLoS Comput. Biol.} 11(9): e1004398. (*equal contribution authors)
+\item \textbf{Alford RF*}, Koehler Leman J*, Weitzner BD, Duran AM, Tilley DC, Elazar A, Gray JJ (2015) ``An integrated framework advancing membrane protein modeling and design,'' \textit{PLoS Computational Biology} 11(9): e1004398 (*equal contribution authors).
 
-\item Pope WH, Bowman CA, Russell DA, Jacobs-Sera D, Asai DJ, Cresawn SG, Jacobs WR, Hendrix RW, Lawrence JG, Hartfull GF, \textbf{SEA-PHAGES}, PHIRE (2015) ``Whole genome comparison of a large collection of mycobacteriophages reveals a continuum of phage genetic diversity variation'' \textit{eLife}, 4, 1-65. \textit{*Full author listing in manuscript}
+\item Pope WH, Bowman CA, Russell DA, Jacobs-Sera D, Asai DJ, Cresawn SG, Jacobs WR, Hendrix RW, Lawrence JG, Hartfull GF, \textbf{SEA-PHAGES*}, PHIRE (2015) ``Whole genome comparison of a large collection of mycobacteriophages reveals a continuum of phage genetic diversity variation'' \textit{eLife}, 4, 1-65. \textit{*Group Authorship - Full listing in manuscript}
 \end{etaremune}
+
+%%% Section: Funding
+\section*{\allcapsspacing{\large Research Funding}}
+
+\textbf{Funded:} Contributed to NIH supplement 3R01-GM078221-07S1 ``Prediction of the structure of therapeutic antibodies with their antigens'' to support three years of my training in the Gray Lab.
+\vspace{0.25\baselineskip}\par
 
 %%% Section: Selected honors and awards
 \section*{\allcapsspacing{Selected Honors and Awards}}
 
-\leadershipitem{NIH Undergraduate Diversity Research Supplement}{2013--Present}{Three years of support for research on computational modeling of membrane proteins}
-\leadershipitem{Carnegie Mellon Dean's List High Honors}{Fall 2013, Spring 2014, 2015}{Awarded to students with a semester GPA of 3.7 or higher}
-\leadershipitem{Grace Hopper Celebration Scholar}{2014}{Scholarship supported by the National Science Foundation to attend the 2014 Grace \\ Hopper Celebration of Women in Computing}
-\yearitem{Facebook Open Academy--Technical Report Award}{2014}
+\yearitem{Ruth Welch Walker Scholarship}{2012--Present}
+\yearitem{Dean's List}{Fall 2013, Spring 2014, 2015}
+\yearitem{Grace Hopper Conference Scholarship}{2014}
 \yearitem{Selected Student Speaker--TEDxCMU}{2013}
-\yearitem{Carnegie Mellon Ruth Welch Walker Scholarship}{2013--Present}
-\leadershipitem{Davidson Fellowship Honorable Mention}{2012}{Awarded to 20 students nationwide for significant work in science and technology}
-\leadershipitem{Intel International Science and Engineering Fair--Best project in Biochemistry category}{2012}{First place and top category award for Biochemistry category}
-\leadershipitem{Intel Science Talent Search Semifinalist}{2012}{One of 300 national semifinalists}
-\leadershipitem{Max Carpenter Award for Promise in Science and Engineering}{2010}{Awarded to one student at annual NASA Space Academy for visually impaired students}
+\yearitem{Davidson Fellowship Honorable Mention}{2012}
+\yearitem{Intel International Science and Engineering Fair--Best Biochemistry Project}{2012}
+\yearitem{Intel Science Talent Search Semifinalist}{2012}
+\yearitem{Max Carpenter Award for Promise in Science and Engineering}{2010}
+
+
 
 %%% Section: Scientific talks
-\section*{\allcapsspacing{Scientific Talks}}
+\section*{\allcapsspacing{Conference Talks}}
 
 \begin{etaremune}
-\item Alford RF, Baugh EH, Gray JJ (2014) ``Real-time visualization of Rosetta membrane simulations using the PyMOL viewer'' \textit{Rosetta Developer's Meeting}, Seattle, WA.
-\item Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2014) ``RosettaMP - An object-oriented framework for modeling and design of membrane proteins in Rosetta'' \textit{Rosetta Developer's Meeting}, San Francisco, CA
-\item Alford RF (2013) ``The Dream Machine'' \textit{TEDxCMU}, Pittsburgh, PA.
+\item \textbf{Alford RF}, \textbf{Baugh EH}, Gray JJ (2014) ``Real-time visualization of Rosetta membrane simulations using the PyMOL viewer'' \textit{Rosetta Developer's Meeting}, Seattle, WA.
+\item \textbf{Alford RF}, Koehler Leman J, Gray JJ (2014) ``RosettaMP - An object-oriented framework for modeling and design of membrane proteins in Rosetta'' \textit{Rosetta Developer's Meeting}, San Francisco, CA
+\item \textbf{Alford RF} (2013) ``The Dream Machine'' \textit{TEDxCMU}, Pittsburgh, PA.
 \end{etaremune}
+\vspace{0.25\baselineskip}\par
 
 %%% Section: Scientific Posters
-\section*{\allcapsspacing{Scientific Posters}}
+\section*{\allcapsspacing{\large Conference Posters}}
 
 \begin{etaremune}
-\item Alford RF, Fleming P, Fleming KG, Gray JJ (2015) ``Toward an all-atom energy function for scoring in membrane environments of diverse lipid composition'' \textit{Rosetta Conference}, Leavenworth, WA.
-\item Alford RF, Koehler Leman J, Gray JJ (2015) ``Validation of an intrinsic lipid bilayer model in the RosettaMP framework'' \textit{Gordon Research Conference -- Membrane Protein Folding}, Waltham, MA.
+\item Alford RF, Fleming P, Fleming KG, Gray JJ (2015) ``Toward an all-atom energy function for membrane protein modeling in bilayers of different lipid composition'' \textit{Rosetta Conference}, Leavenworth, WA.
+\item Alford RF, Fleming KG, Gray JJ (2015) ``Validation of the implicit membrane model in RosettaMP'' \textit{Gordon Research Conference -- Membrane Protein Folding}, Waltham, MA.
 \item Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2014) ``An integrated framework advancing membrane protein modeling and design'' \textit{Carnegie Mellon Meeting of the Minds Symposium}, Pittsburgh, PA.
 \item Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2014) ``A new object-orieented framework for modeling and design of membrane proteins in Rosetta'' \textit{Grace Hopper Conference for Women in Computing}, Phoenix, AZ.
 \item Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2014) ``A new object-orieented framework for modeling and design of membrane proteins in Rosetta'' \textit{Rosetta Conference}, Leavenworth, WA.
-\item Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2014) ``A new object-orieented framework for modeling and design of membrane proteins in Rosetta'' \textit{Carnegie Mellon Meeting of the Minds Symposium}, Pittsburgh, PA.
+\item Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2014) ``Redesigning the framework for membrane protein modeling in Rosetta'' \textit{Carnegie Mellon Meeting of the Minds Symposium}, Pittsburgh, PA.
 \item Alford RF, Koehler Leman J, Gray JJ (2013) ``Redesigning the framework for membrane protein modeling in Rosetta'' \textit{Rosetta Conference}, Leavenworth, WA.
 \item Alford RF, Simmons-Elder R, Poultney C, Halvorsen L, Bonneau R (2012) ``A machine-learning based approach to predicting functional effects of mutations in membrane proteins'' \textit{Rosetta Conference}, Leavenworth, WA.
 \end{etaremune}
 
-\newpage
-
-%%% Section: Teaching Experience
 \section*{\allcapsspacing{Teaching and Mentoring Experience}}
 
-\longteachingitem{Mentor to seven high school research students}{2011--Present}{Mentored seven female high school students in collaboration with classroom}{teacher in conducting computational structural biology research}{Commack, NY}
+\researchitem{High school research mentor}{2011--Present}{Commack, NY}{\\I mentored seven female high school students to each pursue their own research projects in computational structural biology and bioinformatics}
 
-\longteachingitem{Co-Instructor, Rosetta Intern Boot Camp}{May 2015}{A week-long workshop for eight undergraduates on C++ programming, software }{ design, and development in Rosetta}{Chapel Hill, NC}
+\researchitem{Co-Instructor, Rosetta Intern Boot Camp}{May 2015}{Chapel Hill, NC}{\\An intensive week-long workshop for eight undergraduates on C++ programming, software design, concepts in biomolecular modeling with Rosetta modeling, and collaborative development. I delivered nine lectures and helped students complete lab activities}
 
-\longteachingitem{Co-Instructor, Rosetta Boot Camp}{June 2014}{A week-long workshop for 15-18 post-doctoral fellows and graduate}{students on C++ programming, software design, and development in Rosetta}{Chapel Hill, NC}
+\researchitem{Co-Instructor, Rosetta Boot Camp}{June 2014}{Chapel Hill, NC}{\\An intensive week-long workshop for 15-18 post-doctoral fellows and graduate students on C++ programming, software design, concepts in biomolecular modeling with Rosetta modeling, and collaborative development. I delivered four lectures and helped students with lab activities.}
 
-\longteachingitem{Co-Developer and Co-Instructor, ThinkTech}{2014--Present}{Created and pilot-tested a weekly outreach program for middle}{school girls targeting computational thinking skills}{Pittsburgh, PA}
+\researchitem{Co-Developer and Co-Instructor, ThinkTech}{2014--Present}{Pittsburgh, PA}{\\In a team of three, I created a new curriculum for a weekly science and engineering outreach program for middle school girls. Unlike existing curricula, the lessons focus explicitly on computational skill building. Thus far, we have pilot tested one session andm made our materials freely available online.}
+
+\section*{\allcapsspacing{Special Projects}}
+
+\researchitem{Facebook Open Academy Intern, Spatial4j}{Spring 2014}{Advisor: David Smiley}{
+\begin{compactitem}
+\item Implemented module for representing a polygon on the surface of an ellipsoid
+\item Implemented algorithms calculating the spatial relationship between the polygon and surrounding shapes
+\item Collaborated on team of three students from the United States and Canada
+\end{compactitem}
+}
+
+\researchitem{Phage Genomics Research Project}{Fall 2012}{Advisors: Dr. Margaret Bruan and Dr. Jonathan Jarvik}{
+\begin{compactitem}
+\item Characterized a unique bacteriophage using computational and wet lab techniques
+\item Analysis contributed to a publication analyzing genetic diversity of bacteriophages
+\end{compactitem}
+}
 
 %%% Section: Science Outreach
-\section*{\allcapsspacing{Activities and Science Outreach}}
-\leadershipitem{Assistant Organizer, Rosetta REU Program}{2015}{Assisted in recruiting, organization, and admissions for a pilot Research Experience \\ for Undergraduates (REU) targeted toward increasing diversity}
+\section*{\allcapsspacing{Activities and Outreach}}
 
-\leadershipitem{Assistant Organizer, Rosetta Team at Grace Hopper}{2014}{Lead Rosetta team of six students to attend Grace Hopper Conference \\ for the first time. Coordinated efforts for creating career fair materials}
+\leadershipitem{Invited Panelist - STEM Career Expo for students with visual disabilities}{October 2015}{Student representative on panel and round table discussion on overcoming disability-related challenges}
 
-\leadershipitem{Science Fair Judge, Plainview Old Bethpage Middle School}{2014, 2015}{Evaluated projects for annual 6th grade science fair}
+\leadershipitem{Volunteer - Girls Rock Science Weekend at Carnegie Science Center}{October 2015}{Lead computer science demonstrations to cultivate interest of elementary and middle school girls in science and engineering fields}
 
-\yearitem{Committee Member, Carnegie Mellon Women in Computer Science}{2014--Present}
+\leadershipitem{Assistant Organizer, Rosetta REU Program}{2015}{Helped create the first NSF-funded Rosetta Research Experience for Undergraduates (REU) targeted toward improvidng diversity in the Rosetta Community.} 
 
-\leadershipitem{Instructor and Volunteer, Carnegie Mellon Creative Technology Nights}{2013--Present}{Lead and assisted with weekly 2hr workshops for middle school girls designed \\to increase exposure to science and technology}
+\leadershipitem{Assistant Organizer, Rosetta Team at Grace Hopper}{2014}{Lead the first Rosetta team of six students to attend Grace Hopper Celebration of Women in Computing. Coordinated efforts for creating career fair materials}
 
-\leadershipitem{Team Captain, VisionWalk}{2012, 2013}{Organized teams in Long Island, NY and Pittsburgh, PA for annual walk \\ dedicated to raising awareness for inherited retinal diseases}
+\leadershipitem{Instructor and Volunteer, Carnegie Mellon Creative Technology Nights}{2013--Present}{Lead and assisted with weekly 2hr workshops for middle school girls designed to increase exposure to science and technology}
 
-\newpage
+\yearitem{\noindent Committee Member, Carnegie Mellon Women in Computer Science}{2013--Present}
+
+\leadershipitem{Team Captain, Foundation Fighting Blindness VisionWalk}{2012, 2013}{Organized teams in Long Island, NY and Pittsburgh, PA for annual walk dedicated to raising awareness for inherited retinal diseases}
 
 %%% Section: Skills
 \section*{\allcapsspacing{Skills}}
 
-\skillsitem{Molecular Modeling and Computational Chemistry}
-\begin{multicols}{2}
+\begin{multicols}{2}[Molecular Modeling and Computational Chemistry]
 \begin{compactitem}
 \item Computational methods development
 \item Protein structure prediction and design with Rosetta
@@ -229,35 +233,27 @@
 \end{compactitem}
 \end{multicols}
 
-\begin{multicols}{2}[\skillsitem{\\Computation, Analysis and Software Development}]
+\begin{multicols}{2}[Computation, Analysis and Software Development]
 \begin{compactitem}
 \item Languages: C++, Python, Java, C, Perl, HTML/CSS, shell scripting
 \item Version Control: Git, Subversion 
 \item Object oriented software design
-\item Machine Learning: SVM, Linear Regression
-\item Computations in Mathematica, MATLAB
 \item Statistics and data analysis in R
+\item Machine Learning: Support Vector Machines, Linear Regression
+\item Computations in Mathematica, MATLAB
 \item Data anlysis with GNUPlot, Matplotlib 
 \end{compactitem} 
 \end{multicols}
 
-\skillsitem{\\Experimental Techniques} 
-\begin{multicols}{2}
-\begin{compactitem}
-\item Organic chemistry
-\item Analytical chemistry
-\item Small molecule synthesis
-\item NMR Spectroscopy
-\item IR Spectroscopy
-\end{compactitem}
-\end{multicols}
-
-\skillsitem{\\Professional}
-\begin{compactitem}
-\item Helped with writing of NSF Molecular and Cellular Biology Grant
-\item Helped with writing of NIH R01 Supplement \\
-\end{compactitem}
-
-Last Updated: 9/5/15
+%\begin{multicols}{2}[Experimental Techniques]
+%\begin{compactitem}
+%\item Organic chemistry
+%\item Analytical chemistry
+%\item Small molecule synthesis
+%\item NMR Spectroscopy
+%\item IR Spectroscopy
+%\end{compactitem}
+%\end{multicols}
 
 \end{document}
+
